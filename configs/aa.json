@@ -1,0 +1,23 @@
+{
+  "name": "wasm-aa",
+  "purpose": "validation",
+  "seed": 20261112,
+  "variants": [
+    "shared"
+  ],
+  "scenarios": [
+    "sequential"
+  ],
+  "repetitions": 10,
+  "randomizeOrder": true,
+  "pauseMs": 250,
+  "navigationTimeoutMs": 30000,
+  "scenarioTimeoutMs": 30000,
+  "viewport": {
+    "width": 1280,
+    "height": 900
+  },
+  "isolation": "browser-per-run",
+  "validationKind": "aa"
+}
+

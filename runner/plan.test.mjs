@@ -31,3 +31,11 @@ test('Сокращённая конфигурация помечена как п
     assert.equal(quick.purpose, 'validation');
     assert.equal(makePlan(quick).length, 9);
 });
+
+test('A/A содержит ровно десять повторений одной конфигурации', async () => {
+    const aa = await readConfig(new URL('../configs/aa.json', import.meta.url));
+    assert.equal(makePlan(aa).length, 10);
+    assert.equal(aa.validationKind, 'aa');
+    assert.throws(() => validateConfig({...aa, repetitions: 9}));
+    assert.throws(() => validateConfig({...aa, variants: ['local', 'shared']}));
+});

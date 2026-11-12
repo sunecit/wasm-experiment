@@ -1,0 +1,6 @@
+{
+  "alpha": 0.05,
+  "splitSeed": 20261112,
+  "cpuWarningPercent": 80,
+  "trendPermutations": 9999
+}

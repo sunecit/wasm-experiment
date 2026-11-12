@@ -184,7 +184,7 @@ def main():
     (output / 'analysis-manifest.json').write_text(json.dumps(metadata, ensure_ascii=False, indent=2) + '\n')
     print(f'Обработано {len(frame)} прогонов. Назначение: {config["purpose"]}. Результаты: {output}')
     if config['purpose'] == 'validation':
-        print('Проверочная серия: статистические сравнения отключены. При n=1 доверительный интервал не рассчитывается.')
+        print('Проверочная серия: сравнение подходов отключено. A/A выполняется отдельной командой make validate.')
 
 
 if __name__ == '__main__':

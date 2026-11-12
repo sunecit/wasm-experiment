@@ -9,6 +9,8 @@ help:
 	@echo "make check       браузерные функциональные проверки"
 	@echo "make experiment  серия измерений из CONFIG"
 	@echo "make quick       сокращённая проверка запуска серии"
+	@echo "make aa          десять повторений одной конфигурации"
+	@echo "make validate    проверка серии, требуется BATCH"
 	@echo "make down        остановка контейнеров проекта"
 
 build:
@@ -40,3 +42,10 @@ down:
 analyze:
 	@test -n "$(BATCH)" || (echo "Укажите BATCH=results/raw/имя-серии"; exit 1)
 	docker compose --profile analysis run --rm --build analysis --batch "$(BATCH)"
+
+.PHONY: aa validate
+aa:
+	$(MAKE) experiment CONFIG=configs/aa.json
+
+validate: analyze
+	docker compose --profile analysis run --rm --entrypoint python analysis analysis/validate_stand.py --batch "$(BATCH)"

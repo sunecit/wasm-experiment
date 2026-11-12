@@ -32,7 +32,7 @@ COPY --from=build /workspace/package.json ./package.json
 COPY --from=build /workspace/sut ./sut
 COPY runner ./runner
 COPY configs ./configs
-RUN node --test runner/plan.test.mjs
+RUN node --test runner/plan.test.mjs runner/resources.test.mjs
 CMD ["node", "runner/smoke.mjs"]
 
 

@@ -10,7 +10,7 @@ function integer(value, min, max, name) {
 export function validateConfig(c) {
     if (!c || typeof c !== 'object' || Array.isArray(c)) throw new Error('Конфигурация должна быть объектом.');
     const allowed = ['name', 'purpose', 'seed', 'variants', 'scenarios', 'repetitions', 'randomizeOrder', 'pauseMs',
-        'navigationTimeoutMs', 'scenarioTimeoutMs', 'viewport', 'isolation'];
+        'navigationTimeoutMs', 'scenarioTimeoutMs', 'viewport', 'isolation', 'validationKind'];
     for (const key of Object.keys(c)) if (!allowed.includes(key)) throw new Error(`Неизвестный параметр ${key}.`);
     if (typeof c.name !== 'string' || !/^[a-z0-9-]{1,60}$/.test(c.name)) throw new Error('Некорректное имя эксперимента.');
     if (!['experiment', 'validation'].includes(c.purpose)) throw new Error('Укажите назначение experiment или validation.');
@@ -30,6 +30,7 @@ export function validateConfig(c) {
     if (!c.viewport || Object.keys(c.viewport).some(key => !['width', 'height'].includes(key))) throw new Error('Некорректный viewport.');
     integer(c.viewport.width, 320, 3840, 'viewport.width');
     integer(c.viewport.height, 240, 2160, 'viewport.height');
+    if (c.validationKind !== undefined && (c.validationKind !== 'aa' || c.purpose !== 'validation' || c.variants.length !== 1 || c.scenarios.length !== 1 || c.repetitions !== 10)) throw new Error('A/A требует 10 повторений одной конфигурации с purpose=validation.');
     return c;
 }
 

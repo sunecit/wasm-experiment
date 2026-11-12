@@ -58,6 +58,7 @@ services:
     extends:
       service: checks
     profiles: ["experiment"]
+    cpus: ${EXPERIMENT_CPUS:-4.0}
     command: ["node", "runner/run-experiment.mjs"]
     volumes:
       - ./results/raw:/workspace/results/raw
@@ -74,3 +75,4 @@ services:
     volumes:
       - ./results/raw:/workspace/results/raw:ro
       - ./results/processed:/workspace/results/processed
+      - ./configs:/workspace/configs:ro

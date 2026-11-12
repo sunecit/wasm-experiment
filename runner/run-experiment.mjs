@@ -1,3 +1,4 @@
+import {snapshot, difference} from './resources.mjs';
 import {readFile} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import assert from 'node:assert/strict';
@@ -48,7 +49,7 @@ const summary = {
     planned: plan.length, completed: 0, failed: 0, configPath, seed: config.seed,
     metadataStatus: metadata.git.commit && !metadata.git.dirty ? 'captured' : 'unversioned-code',
     limitations: [...metadata.limitations,
-        'А/A-проверка, оценка нагрузки и статистическая обработка ещё не выполнены.']
+        'Оценка A/A, нагрузки и стабильности выполняется отдельной командой make validate.']
 };
 await writeFile(resolve(directory, 'environment.json'), metadataBytes);
 await save('config.json', config);
@@ -73,8 +74,9 @@ try {
             batchId: id, runId: String(params.order).padStart(4, '0'), purpose: config.purpose,
             manifest: {file: 'environment.json', sha256: metadataHash, git: metadata.git},
             params, seed: config.seed, startedAt: new Date().toISOString(), status: 'running',
-            environment: {node: process.version, platform: process.platform, architecture: process.arch}, pageErrors
+            environment: {node: process.version, platform: process.platform, architecture: process.arch}, pageErrors, resources: {}
         };
+        const browserResourceStart = snapshot();
         try {
             // Новый процесс браузера и контекст исключают повторное использование runtime и HTTP-кэша браузера.
             browser = await chromium.launch({headless: true, timeout: config.navigationTimeoutMs});
@@ -87,8 +89,14 @@ try {
             await page.goto(baseURL, {waitUntil: 'load'});
             await page.waitForFunction(() => Boolean(globalThis.__imageLabHarness));
             assert.equal(await page.evaluate(() => isSecureContext && Boolean(crypto.subtle)), true);
-            const output = await withTimeout(page.evaluate(({variant, scenario}) =>
-                globalThis.__imageLabHarness.runScenario(scenario, variant), params), config.scenarioTimeoutMs);
+            const scenarioResourceStart = snapshot();
+            let output;
+            try {
+                output = await withTimeout(page.evaluate(({variant, scenario}) =>
+                    globalThis.__imageLabHarness.runScenario(scenario, variant), params), config.scenarioTimeoutMs);
+            } finally {
+                record.resources.scenario = difference(scenarioResourceStart, snapshot());
+            }
             // Сначала сохраняем исходный ответ, затем проверяем корректность: ошибочный ответ не теряется.
             record.output = output;
             assert.equal(output.variant, params.variant);
@@ -117,6 +125,7 @@ try {
             record.error = {name: error.name, message: error.message, stack: error.stack};
             throw error;
         } finally {
+            record.resources.browserRun = difference(browserResourceStart, snapshot());
             record.finishedAt = new Date().toISOString();
             // Запись выполняется до закрытия браузера, чтобы ошибка очистки не скрыла исходные данные.
             try {
