@@ -35,3 +35,8 @@ quick:
 
 down:
 	docker compose down
+
+.PHONY: analyze
+analyze:
+	@test -n "$(BATCH)" || (echo "Укажите BATCH=results/raw/имя-серии"; exit 1)
+	docker compose --profile analysis run --rm --build analysis --batch "$(BATCH)"

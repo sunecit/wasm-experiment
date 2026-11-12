@@ -62,3 +62,15 @@ services:
     volumes:
       - ./results/raw:/workspace/results/raw
       - ./configs:/workspace/configs:ro
+
+  analysis:
+    build:
+      context: .
+      dockerfile: analysis/Dockerfile
+    profiles: ["analysis"]
+    network_mode: none
+    cpus: 2.0
+    mem_limit: 2g
+    volumes:
+      - ./results/raw:/workspace/results/raw:ro
+      - ./results/processed:/workspace/results/processed

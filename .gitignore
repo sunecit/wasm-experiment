@@ -25,3 +25,7 @@ test-results/
 # Сырые измерения сохраняются локально и передаются отдельно.
 /results/raw/*
 !/results/raw/.gitkeep
+
+# Воспроизводимые результаты анализа
+/results/processed/*
+!/results/processed/.gitkeep
