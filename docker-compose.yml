@@ -1,0 +1,64 @@
+name: pr4-wasm-experiment
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+      target: web
+    ports:
+      - "127.0.0.1:${STAND_PORT:-4175}:8080"
+    cpus: 1.0
+    mem_limit: 128m
+    depends_on:
+      wasm-delivery:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "wget", "-q", "-O", "/dev/null", "http://127.0.0.1:8080/health"]
+      interval: 2s
+      timeout: 2s
+      retries: 20
+
+  wasm-delivery:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+      target: delivery
+    cpus: 0.5
+    mem_limit: 64m
+    healthcheck:
+      test: ["CMD", "wget", "-q", "-O", "/dev/null", "http://127.0.0.1:8080/health"]
+      interval: 2s
+      timeout: 2s
+      retries: 20
+
+  checks:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+      target: checks
+    profiles: ["check"]
+    init: true
+    # Localhost браузера указывает на веб-сервер в общей сетевой области.
+    # Процессы, файловые системы и ограничения ресурсов контейнеров раздельные.
+    network_mode: "service:web"
+    environment:
+      TEST_BASE_URL: http://127.0.0.1:8080
+      BROWSER_CHANNEL: chromium
+    cpus: 2.0
+    mem_limit: 2g
+    shm_size: 512m
+    volumes:
+      - ./test-results:/workspace/test-results
+    depends_on:
+      web:
+        condition: service_healthy
+
+  experiment:
+    extends:
+      service: checks
+    profiles: ["experiment"]
+    command: ["node", "runner/run-experiment.mjs"]
+    volumes:
+      - ./results/raw:/workspace/results/raw
+      - ./configs:/workspace/configs:ro

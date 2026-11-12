@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Сравнение подходов к интеграции WebAssembly</title>
+</head>
+<body>
+<main>
+    <header>
+        <h1>Сравнение подходов к интеграции WebAssembly</h1>
+        <p class="page-intro">Три микрофронтенда обрабатывают одно изображение. Сравниваются независимое подключение WASM, централизованная доставка и общая среда выполнения.</p>
+    </header>
+    <section class="toolbar" aria-label="Управление стендом">
+        <label for="variant">Подход к интеграции</label>
+        <select id="variant" aria-describedby="approach-description">
+            <option value="local">Независимые компоненты</option>
+            <option value="server">Централизованная доставка</option>
+            <option value="shared">Общая среда выполнения</option>
+        </select>
+        <button id="reset">Сбросить состояние</button>
+        <p id="approach-description"></p>
+    </section>
+    <div class="workspace">
+        <div class="editor-column">
+            <section class="preview">
+                <h2>Изображение</h2>
+                <div class="preview-surface"><canvas id="image" aria-label="Обрабатываемое изображение"></canvas></div>
+                <p id="dimensions"></p>
+                <analysis-mfe></analysis-mfe>
+            </section>
+            <section class="components" aria-label="Обработка изображения">
+                <filters-mfe></filters-mfe>
+                <transform-mfe></transform-mfe>
+            </section>
+        </div>
+        <aside class="sidebar" aria-label="Сценарии и показатели">
+            <section class="scenarios">
+                <h2>Сценарии</h2>
+                <p>Готовые последовательности действий для проверки WASM. Каждый запуск восстанавливает исходное изображение и создаёт новые среды выполнения.</p>
+                <div class="scenario-item">
+                    <button data-scenario="sequential" aria-describedby="sequential-description">Последовательный доступ</button>
+                    <p id="sequential-description">Фильтрация, уменьшение и анализ выполняются по очереди. Проверяем, сколько экземпляров создают три микрофронтенда.</p>
+                </div>
+                <div class="scenario-item">
+                    <button data-scenario="concurrent" aria-describedby="concurrent-description">Конкурентный первый доступ</button>
+                    <p id="concurrent-description">Фильтрация и уменьшение одновременно запрашивают WASM для исходного изображения. Проверяем, не создаётся ли общий экземпляр дважды. Результаты двух веток появятся ниже.</p>
+                </div>
+                <div class="scenario-item">
+                    <button data-scenario="repeated" aria-describedby="repeated-description">Повторные обращения</button>
+                    <p id="repeated-description">Пять операций подряд: инверсия, отражение, анализ, яркость и ещё одно отражение. Проверяем повторное использование экземпляров.</p>
+                </div>
+                <p class="help-text">«Обращение» означает вызов функции WASM. Конкурентный запуск не означает вычисление в разных потоках. Сброс не очищает HTTP-кэш браузера.</p>
+            </section>
+            <section class="metrics">
+                <h2>Показатели выполнения</h2>
+                <table aria-label="Показатели выполнения">
+                    <thead><tr><th scope="col">Показатель</th><th scope="col">Значение</th></tr></thead>
+                    <tbody id="metrics"></tbody>
+                </table>
+                <p class="help-text">Экземпляр WASM содержит функции и собственную память. Показатели накапливаются до сброса. Вызов fetch может получить файл из кэша; память относится только к WASM.</p>
+            </section>
+        </aside>
+    </div>
+    <p id="status" role="status" aria-live="polite">Подключаем микрофронтенды фильтрации, преобразования и анализа.</p>
+    <section class="result-panel" aria-labelledby="result-title">
+        <h2 id="result-title">Результаты</h2>
+        <div id="output"></div>
+    </section>
+</main>
+<script type="module" src="/main.ts"></script>
+</body>
+</html>

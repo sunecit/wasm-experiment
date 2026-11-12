@@ -1,0 +1,14 @@
+# В образ попадают исходники и lock-файл, зависимости устанавливаются заново.
+node_modules
+**/node_modules
+.git
+.idea
+.vscode
+.DS_Store
+dist
+**/dist
+test-results
+playwright-report
+results
+.env
+.env.*

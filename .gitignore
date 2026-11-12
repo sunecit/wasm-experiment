@@ -1,0 +1,27 @@
+# Зависимости и результаты сборки
+node_modules/
+dist/
+
+# Окружение Python для анализа
+.venv/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Файлы редактора и операционной системы
+.DS_Store
+.idea/
+.vscode/
+
+# Локальные секреты
+.env
+.env.*
+!.env.example
+
+# Результаты тестов
+playwright-report/
+test-results/
+
+# Сырые измерения сохраняются локально и передаются отдельно.
+/results/raw/*
+!/results/raw/.gitkeep

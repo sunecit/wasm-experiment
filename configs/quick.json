@@ -1,0 +1,26 @@
+{
+  "name": "wasm-integration-quick",
+  "purpose": "validation",
+  "seed": 20261112,
+  "variants": [
+    "local",
+    "server",
+    "shared"
+  ],
+  "scenarios": [
+    "sequential",
+    "concurrent",
+    "repeated"
+  ],
+  "repetitions": 1,
+  "randomizeOrder": true,
+  "pauseMs": 0,
+  "navigationTimeoutMs": 30000,
+  "scenarioTimeoutMs": 30000,
+  "viewport": {
+    "width": 1280,
+    "height": 900
+  },
+  "isolation": "browser-per-run"
+}
+

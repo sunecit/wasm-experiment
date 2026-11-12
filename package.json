@@ -1,0 +1,26 @@
+{
+  "name": "pr4-wasm-experiment",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Experimental stand for shared WebAssembly integration in microfrontends",
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "scripts": {
+    "build:wasm": "node sut/wasm/build.mjs",
+    "test:wasm": "npm run build:wasm && node --test sut/wasm/image-core.test.mjs",
+    "typecheck": "tsc -p tsconfig.json",
+    "test:runtime": "npm run build:wasm && npm run typecheck && node --test sut/runtime/image-runtime.test.mjs",
+    "test": "npm run build:wasm && npm run typecheck && node --test sut/wasm/image-core.test.mjs sut/runtime/image-runtime.test.mjs",
+    "build": "npm run build:wasm && npm run typecheck && node sut/build.mjs",
+    "preview": "vite preview --host 127.0.0.1 --port 4174 --strictPort",
+    "test:browser": "npm run build && node --test sut/browser.test.mjs"
+  },
+  "devDependencies": {
+    "wabt": "1.0.37",
+    "typescript": "5.9.2",
+    "vite": "7.1.4",
+    "playwright": "1.55.0"
+  }
+}
