@@ -1,0 +1,65 @@
+{
+  "batchId": "wasm-integration-quick-2026-11-12T16-06-50.735Z-f9022b54",
+  "runId": "0009",
+  "purpose": "validation",
+  "manifest": {
+    "file": "environment.json",
+    "sha256": "c3da496cc9a35a197e1fd7a367866f20511d987a240d81a815a562667a97cca3",
+    "git": {
+      "commit": null,
+      "dirty": null,
+      "reason": "Нет доступного Git-коммита."
+    }
+  },
+  "params": {
+    "order": 9,
+    "variant": "shared",
+    "scenario": "repeated",
+    "repetition": 1
+  },
+  "seed": 20261112,
+  "startedAt": "2026-11-12T16:06:51.809Z",
+  "status": "completed",
+  "environment": {
+    "node": "v24.15.0",
+    "platform": "linux",
+    "architecture": "arm64",
+    "browser": "140.0.7339.16"
+  },
+  "pageErrors": [],
+  "output": {
+    "variant": "shared",
+    "scenario": "repeated",
+    "scenarioDurationMs": 13.100000001490116,
+    "diagnostics": {
+      "initializationAttemptCount": 1,
+      "successfulInitializationCount": 1,
+      "wasmFetchCount": 1,
+      "wasmFetchedBytes": 1410,
+      "wasmInstanceCount": 1,
+      "wasmLinearMemoryBytes": 1114112,
+      "initializationDurationMs": 2.399999998509884,
+      "operationCount": 5,
+      "operationDurationMs": 6.300000000745058
+    },
+    "result": {
+      "redSum": 34405560,
+      "greenSum": 34405760,
+      "blueSum": 30912000,
+      "min": 0,
+      "max": 255,
+      "checksum": 1933517477,
+      "pixels": 268800
+    },
+    "analysisStage": "После инверсии и горизонтального отражения, до последних двух операций.",
+    "resources": [
+      {
+        "name": "http://127.0.0.1:8080/shared/image-core.wasm",
+        "duration": 0.5,
+        "transferSize": 1710,
+        "encodedBodySize": 1410
+      }
+    ]
+  },
+  "finishedAt": "2026-11-12T16:06:51.887Z"
+}

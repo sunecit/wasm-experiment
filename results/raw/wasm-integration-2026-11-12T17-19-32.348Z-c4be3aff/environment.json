@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-11-12T17:19:31.991Z",
+  "git": {
+    "commit": "6ba62a676729a6ef220d508137f517b9eeec123b",
+    "dirty": false
+  },
+  "configSha256": "41a86dd565b2a7e6ace8e2faf45be64a66f324621160efcf1eb7f048e9e734e9",
+  "host": {
+    "os": "Darwin",
+    "release": "25.2.0",
+    "architecture": "arm64",
+    "cpuModel": "Apple M5",
+    "logicalCpuCount": 10,
+    "memoryBytes": 25769803776
+  },
+  "docker": {
+    "serverVersion": "29.4.3",
+    "operatingSystem": "Docker Desktop",
+    "architecture": "aarch64",
+    "cpuCount": 10,
+    "memoryBytes": 8321712128,
+    "composeVersion": "5.1.3"
+  },
+  "services": {
+    "web": {
+      "imageId": "sha256:1b66c4dfd772ba74d01f88f12c80c9bb05fc934ff863b576f194a206e1e43c7b",
+      "repoDigests": [
+        "pr4-wasm-experiment-web@sha256:1b66c4dfd772ba74d01f88f12c80c9bb05fc934ff863b576f194a206e1e43c7b"
+      ],
+      "os": "linux",
+      "architecture": "arm64",
+      "configuredLimits": {
+        "cpus": 1,
+        "memory": "134217728"
+      },
+      "actualLimits": {
+        "nanoCpus": 1000000000,
+        "memoryBytes": 134217728,
+        "shmBytes": 67108864
+      }
+    },
+    "wasm-delivery": {
+      "imageId": "sha256:0f46682bfe5acc7b8ffedbc0581c28f6b14e736a50c858eb6924b9af1a16db0b",
+      "repoDigests": [
+        "pr4-wasm-experiment-wasm-delivery@sha256:0f46682bfe5acc7b8ffedbc0581c28f6b14e736a50c858eb6924b9af1a16db0b"
+      ],
+      "os": "linux",
+      "architecture": "arm64",
+      "configuredLimits": {
+        "cpus": 0.5,
+        "memory": "67108864"
+      },
+      "actualLimits": {
+        "nanoCpus": 500000000,
+        "memoryBytes": 67108864,
+        "shmBytes": 67108864
+      }
+    },
+    "experiment": {
+      "imageId": "sha256:26564be196e70399640ba43c0684a59b89876306257776c588ebad277130e557",
+      "repoDigests": [
+        "pr4-wasm-experiment-experiment@sha256:26564be196e70399640ba43c0684a59b89876306257776c588ebad277130e557"
+      ],
+      "os": "linux",
+      "architecture": "arm64",
+      "configuredLimits": {
+        "cpus": 6,
+        "memory": "2147483648",
+        "shmSize": "536870912"
+      },
+      "actualLimits": null
+    }
+  },
+  "limitations": []
+}

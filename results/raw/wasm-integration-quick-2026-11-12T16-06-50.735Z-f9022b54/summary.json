@@ -1,0 +1,17 @@
+{
+  "batchId": "wasm-integration-quick-2026-11-12T16-06-50.735Z-f9022b54",
+  "purpose": "validation",
+  "startedAt": "2026-11-12T16:06:50.737Z",
+  "status": "completed",
+  "planned": 9,
+  "completed": 9,
+  "failed": 0,
+  "configPath": "configs/quick.json",
+  "seed": 20261112,
+  "metadataStatus": "unversioned-code",
+  "limitations": [
+    "Версия кода не зафиксирована чистым Git-коммитом.",
+    "А/A-проверка, оценка нагрузки и статистическая обработка ещё не выполнены."
+  ],
+  "finishedAt": "2026-11-12T16:06:51.899Z"
+}

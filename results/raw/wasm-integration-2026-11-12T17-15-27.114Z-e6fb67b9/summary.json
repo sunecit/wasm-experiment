@@ -1,0 +1,16 @@
+{
+  "batchId": "wasm-integration-2026-11-12T17-15-27.114Z-e6fb67b9",
+  "purpose": "experiment",
+  "startedAt": "2026-11-12T17:15:27.114Z",
+  "status": "completed",
+  "planned": 90,
+  "completed": 90,
+  "failed": 0,
+  "configPath": "configs/experiment.json",
+  "seed": 20261112,
+  "metadataStatus": "captured",
+  "limitations": [
+    "Оценка A/A, нагрузки и стабильности выполняется отдельной командой make validate."
+  ],
+  "finishedAt": "2026-11-12T17:15:59.542Z"
+}

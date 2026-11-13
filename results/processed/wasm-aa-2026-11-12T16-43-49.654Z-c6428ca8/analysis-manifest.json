@@ -1,0 +1,39 @@
+{
+  "batchId": "wasm-aa-2026-11-12T16-43-49.654Z-c6428ca8",
+  "purpose": "validation",
+  "inputSha256": {
+    "run-0001.json": "0da1229ed606f0df0839407fb4f166ec33a2d64271bc8c2a6e12ac70ab26f63a",
+    "run-0002.json": "6e8043935f71f3f7cc9cacade7c38776eca277f585c0882cfeb59ff5f90c0d19",
+    "run-0003.json": "9e736baf1add562e36553ed0d3774d9ac4d76b43c921c4b4a477fad1ce7f858f",
+    "run-0004.json": "65763077c2de37abda7c28a4819ba69351ef2f6b1c27345a78505e7ef46c205f",
+    "run-0005.json": "c74d2bf92dfd0041a6809ca3a8fc97ab28a63ead7af259e54bee5eb34b470cb2",
+    "run-0006.json": "2dd3407780341da3342680d27d6a254e777b377546dcc7cfd3c2bc36b9873c2a",
+    "run-0007.json": "06ed5b3d0cb8499978df996af37969c3dc9181bd9d851ccde4c264e35715997d",
+    "run-0008.json": "ea552b7373dcc0bf105b7b3b5a080cb9f2f837fc6d16b653d05ca317af7bfe7b",
+    "run-0009.json": "6552a7ebd8eb9f2eac091b0f7ec11a45577e1fbf5d4cea9a8c9b9c15b908bbe5",
+    "run-0010.json": "9b725adcecfad5e002b460c546b6003d2917d6c8fe06ce31b9b880125d5eaff2",
+    "config.json": "0126146aa4ea547e0b5813be47643c92b45045d6b1559420038daa217b9ef5c1",
+    "plan.json": "3f7f6c476adbfd1f0c077fadff0a8ec75ca509cb4c2d8ec352ea0e0b97b3297b",
+    "summary.json": "411e3724a14d0babef6af9f907c85e799dd1ff47cefae1829a080e7118253c99",
+    "environment.json": "df310c28d23cd1758f4f6e175a0c18a28d74995131a8a7d8fa169c0a1785b5e1"
+  },
+  "analysisSourceSha256": "e1e6d36d86fabdcb1131ca80fcfbf11c3cfcfbeeac1f97fce694e03d3afd7b90",
+  "seed": 20261112,
+  "bootstrapResamples": 10000,
+  "bootstrapMethod": "percentile",
+  "confidenceLevel": 0.95,
+  "multipleTestingFamily": "Все рассчитанные сравнения временных метрик этой серии",
+  "versions": {
+    "python": "3.12.10",
+    "numpy": "2.2.6",
+    "scipy": "1.15.3",
+    "pandas": "2.2.3",
+    "matplotlib": "3.10.3"
+  },
+  "limitations": [
+    "Проверки A/A, нагрузки и повторяемости выполняются отдельно.",
+    "Линейная память WASM не равна общей памяти браузера.",
+    "Сумма полученных WASM-байт не равна сетевому трафику из-за кэширования.",
+    "Отсутствие значимого различия не доказывает эквивалентность."
+  ]
+}

@@ -1,4 +1,3 @@
-/** Одна среда владеет одним WASM-экземпляром. Общий объект означает общую память. */
 export interface RgbaImage {
   width: number;
   height: number;
@@ -52,7 +51,6 @@ interface Core {
   analyze(pointer: number, length: number, out: number): void;
 }
 
-// Ограничения защищают выделение памяти и 32-битную арифметику координат в WAT.
 const MAX_SIDE = 16_384;
 const MAX_PIXELS = 16_777_216;
 function dimensions(width: number, height: number): number {
@@ -68,7 +66,7 @@ function snapshot(image: RgbaImage): RgbaImage {
   if (!(image.data instanceof Uint8Array || image.data instanceof Uint8ClampedArray) || image.data.length !== bytes) {
     throw new RuntimeError('INVALID_IMAGE_DATA', 'RGBA data must contain exactly width × height × 4 bytes.');
   }
-  // Копируем вход до ожидания загрузки: вызывающий код может изменять исходный массив.
+
   return { width: image.width, height: image.height, data: new Uint8Array(image.data) };
 }
 function integerRange(value: number, min: number, max: number): void {
@@ -135,7 +133,7 @@ export function createImageRuntime(manifestUrl: string, options: { fetch?: typeo
 
   function ready(): Promise<Core> {
     if (core) return Promise.resolve(core);
-    // Первые конкурентные вызовы ожидают один Promise. После ошибки загрузку можно повторить.
+
     if (!initialization) initialization = load().catch(error => {
       initialization = undefined;
       throw error;
@@ -147,8 +145,7 @@ export function createImageRuntime(manifestUrl: string, options: { fetch?: typeo
     const input = snapshot(image);
     const wasm = await ready();
     const started = performance.now();
-    // Здесь нет await: выделение памяти, вычисления и копирование результата выполняются
-    // синхронно в одном потоке, поэтому конкурентные вызовы не перемешивают работу с памятью.
+
     wasm.reset_allocator();
     try {
       const pointer = wasm.alloc(input.data.length);
@@ -165,7 +162,7 @@ export function createImageRuntime(manifestUrl: string, options: { fetch?: typeo
   }
 
   function copyImage(wasm: Core, pointer: number, width: number, height: number): RgbaImage {
-    // Отдельная копия сохраняет результат при следующих выделениях и росте памяти.
+
     return { width, height, data: new Uint8ClampedArray(new Uint8Array(wasm.memory.buffer, pointer, width * height * 4)) };
   }
 

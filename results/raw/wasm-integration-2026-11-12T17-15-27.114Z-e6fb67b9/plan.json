@@ -1,0 +1,542 @@
+[
+  {
+    "order": 1,
+    "variant": "server",
+    "scenario": "concurrent",
+    "repetition": 1
+  },
+  {
+    "order": 2,
+    "variant": "server",
+    "scenario": "repeated",
+    "repetition": 7
+  },
+  {
+    "order": 3,
+    "variant": "shared",
+    "scenario": "sequential",
+    "repetition": 4
+  },
+  {
+    "order": 4,
+    "variant": "local",
+    "scenario": "repeated",
+    "repetition": 3
+  },
+  {
+    "order": 5,
+    "variant": "local",
+    "scenario": "concurrent",
+    "repetition": 8
+  },
+  {
+    "order": 6,
+    "variant": "local",
+    "scenario": "sequential",
+    "repetition": 9
+  },
+  {
+    "order": 7,
+    "variant": "shared",
+    "scenario": "concurrent",
+    "repetition": 5
+  },
+  {
+    "order": 8,
+    "variant": "local",
+    "scenario": "concurrent",
+    "repetition": 7
+  },
+  {
+    "order": 9,
+    "variant": "server",
+    "scenario": "repeated",
+    "repetition": 6
+  },
+  {
+    "order": 10,
+    "variant": "local",
+    "scenario": "concurrent",
+    "repetition": 10
+  },
+  {
+    "order": 11,
+    "variant": "local",
+    "scenario": "concurrent",
+    "repetition": 5
+  },
+  {
+    "order": 12,
+    "variant": "server",
+    "scenario": "repeated",
+    "repetition": 9
+  },
+  {
+    "order": 13,
+    "variant": "shared",
+    "scenario": "repeated",
+    "repetition": 6
+  },
+  {
+    "order": 14,
+    "variant": "local",
+    "scenario": "sequential",
+    "repetition": 10
+  },
+  {
+    "order": 15,
+    "variant": "local",
+    "scenario": "concurrent",
+    "repetition": 6
+  },
+  {
+    "order": 16,
+    "variant": "shared",
+    "scenario": "repeated",
+    "repetition": 8
+  },
+  {
+    "order": 17,
+    "variant": "shared",
+    "scenario": "sequential",
+    "repetition": 2
+  },
+  {
+    "order": 18,
+    "variant": "server",
+    "scenario": "concurrent",
+    "repetition": 2
+  },
+  {
+    "order": 19,
+    "variant": "shared",
+    "scenario": "repeated",
+    "repetition": 4
+  },
+  {
+    "order": 20,
+    "variant": "server",
+    "scenario": "repeated",
+    "repetition": 10
+  },
+  {
+    "order": 21,
+    "variant": "server",
+    "scenario": "sequential",
+    "repetition": 2
+  },
+  {
+    "order": 22,
+    "variant": "local",
+    "scenario": "sequential",
+    "repetition": 7
+  },
+  {
+    "order": 23,
+    "variant": "shared",
+    "scenario": "concurrent",
+    "repetition": 2
+  },
+  {
+    "order": 24,
+    "variant": "server",
+    "scenario": "sequential",
+    "repetition": 10
+  },
+  {
+    "order": 25,
+    "variant": "local",
+    "scenario": "repeated",
+    "repetition": 9
+  },
+  {
+    "order": 26,
+    "variant": "local",
+    "scenario": "concurrent",
+    "repetition": 4
+  },
+  {
+    "order": 27,
+    "variant": "shared",
+    "scenario": "sequential",
+    "repetition": 3
+  },
+  {
+    "order": 28,
+    "variant": "server",
+    "scenario": "sequential",
+    "repetition": 9
+  },
+  {
+    "order": 29,
+    "variant": "server",
+    "scenario": "concurrent",
+    "repetition": 5
+  },
+  {
+    "order": 30,
+    "variant": "local",
+    "scenario": "repeated",
+    "repetition": 6
+  },
+  {
+    "order": 31,
+    "variant": "server",
+    "scenario": "repeated",
+    "repetition": 2
+  },
+  {
+    "order": 32,
+    "variant": "local",
+    "scenario": "concurrent",
+    "repetition": 3
+  },
+  {
+    "order": 33,
+    "variant": "shared",
+    "scenario": "sequential",
+    "repetition": 1
+  },
+  {
+    "order": 34,
+    "variant": "shared",
+    "scenario": "sequential",
+    "repetition": 10
+  },
+  {
+    "order": 35,
+    "variant": "shared",
+    "scenario": "concurrent",
+    "repetition": 10
+  },
+  {
+    "order": 36,
+    "variant": "local",
+    "scenario": "repeated",
+    "repetition": 7
+  },
+  {
+    "order": 37,
+    "variant": "shared",
+    "scenario": "sequential",
+    "repetition": 5
+  },
+  {
+    "order": 38,
+    "variant": "server",
+    "scenario": "repeated",
+    "repetition": 4
+  },
+  {
+    "order": 39,
+    "variant": "server",
+    "scenario": "sequential",
+    "repetition": 4
+  },
+  {
+    "order": 40,
+    "variant": "server",
+    "scenario": "sequential",
+    "repetition": 6
+  },
+  {
+    "order": 41,
+    "variant": "shared",
+    "scenario": "repeated",
+    "repetition": 1
+  },
+  {
+    "order": 42,
+    "variant": "server",
+    "scenario": "sequential",
+    "repetition": 5
+  },
+  {
+    "order": 43,
+    "variant": "shared",
+    "scenario": "concurrent",
+    "repetition": 8
+  },
+  {
+    "order": 44,
+    "variant": "shared",
+    "scenario": "concurrent",
+    "repetition": 6
+  },
+  {
+    "order": 45,
+    "variant": "server",
+    "scenario": "repeated",
+    "repetition": 3
+  },
+  {
+    "order": 46,
+    "variant": "server",
+    "scenario": "repeated",
+    "repetition": 8
+  },
+  {
+    "order": 47,
+    "variant": "local",
+    "scenario": "sequential",
+    "repetition": 8
+  },
+  {
+    "order": 48,
+    "variant": "shared",
+    "scenario": "sequential",
+    "repetition": 6
+  },
+  {
+    "order": 49,
+    "variant": "server",
+    "scenario": "concurrent",
+    "repetition": 7
+  },
+  {
+    "order": 50,
+    "variant": "shared",
+    "scenario": "repeated",
+    "repetition": 3
+  },
+  {
+    "order": 51,
+    "variant": "shared",
+    "scenario": "concurrent",
+    "repetition": 4
+  },
+  {
+    "order": 52,
+    "variant": "local",
+    "scenario": "sequential",
+    "repetition": 1
+  },
+  {
+    "order": 53,
+    "variant": "shared",
+    "scenario": "sequential",
+    "repetition": 7
+  },
+  {
+    "order": 54,
+    "variant": "server",
+    "scenario": "concurrent",
+    "repetition": 10
+  },
+  {
+    "order": 55,
+    "variant": "shared",
+    "scenario": "sequential",
+    "repetition": 8
+  },
+  {
+    "order": 56,
+    "variant": "local",
+    "scenario": "sequential",
+    "repetition": 3
+  },
+  {
+    "order": 57,
+    "variant": "server",
+    "scenario": "sequential",
+    "repetition": 8
+  },
+  {
+    "order": 58,
+    "variant": "shared",
+    "scenario": "sequential",
+    "repetition": 9
+  },
+  {
+    "order": 59,
+    "variant": "shared",
+    "scenario": "repeated",
+    "repetition": 10
+  },
+  {
+    "order": 60,
+    "variant": "server",
+    "scenario": "concurrent",
+    "repetition": 3
+  },
+  {
+    "order": 61,
+    "variant": "shared",
+    "scenario": "repeated",
+    "repetition": 5
+  },
+  {
+    "order": 62,
+    "variant": "local",
+    "scenario": "concurrent",
+    "repetition": 1
+  },
+  {
+    "order": 63,
+    "variant": "shared",
+    "scenario": "concurrent",
+    "repetition": 1
+  },
+  {
+    "order": 64,
+    "variant": "server",
+    "scenario": "repeated",
+    "repetition": 1
+  },
+  {
+    "order": 65,
+    "variant": "local",
+    "scenario": "sequential",
+    "repetition": 2
+  },
+  {
+    "order": 66,
+    "variant": "server",
+    "scenario": "repeated",
+    "repetition": 5
+  },
+  {
+    "order": 67,
+    "variant": "local",
+    "scenario": "sequential",
+    "repetition": 6
+  },
+  {
+    "order": 68,
+    "variant": "shared",
+    "scenario": "concurrent",
+    "repetition": 3
+  },
+  {
+    "order": 69,
+    "variant": "server",
+    "scenario": "sequential",
+    "repetition": 1
+  },
+  {
+    "order": 70,
+    "variant": "server",
+    "scenario": "sequential",
+    "repetition": 7
+  },
+  {
+    "order": 71,
+    "variant": "local",
+    "scenario": "repeated",
+    "repetition": 5
+  },
+  {
+    "order": 72,
+    "variant": "server",
+    "scenario": "sequential",
+    "repetition": 3
+  },
+  {
+    "order": 73,
+    "variant": "local",
+    "scenario": "sequential",
+    "repetition": 4
+  },
+  {
+    "order": 74,
+    "variant": "local",
+    "scenario": "repeated",
+    "repetition": 1
+  },
+  {
+    "order": 75,
+    "variant": "local",
+    "scenario": "repeated",
+    "repetition": 2
+  },
+  {
+    "order": 76,
+    "variant": "shared",
+    "scenario": "repeated",
+    "repetition": 9
+  },
+  {
+    "order": 77,
+    "variant": "local",
+    "scenario": "concurrent",
+    "repetition": 9
+  },
+  {
+    "order": 78,
+    "variant": "local",
+    "scenario": "sequential",
+    "repetition": 5
+  },
+  {
+    "order": 79,
+    "variant": "shared",
+    "scenario": "concurrent",
+    "repetition": 9
+  },
+  {
+    "order": 80,
+    "variant": "shared",
+    "scenario": "concurrent",
+    "repetition": 7
+  },
+  {
+    "order": 81,
+    "variant": "local",
+    "scenario": "repeated",
+    "repetition": 4
+  },
+  {
+    "order": 82,
+    "variant": "server",
+    "scenario": "concurrent",
+    "repetition": 6
+  },
+  {
+    "order": 83,
+    "variant": "server",
+    "scenario": "concurrent",
+    "repetition": 8
+  },
+  {
+    "order": 84,
+    "variant": "server",
+    "scenario": "concurrent",
+    "repetition": 9
+  },
+  {
+    "order": 85,
+    "variant": "local",
+    "scenario": "concurrent",
+    "repetition": 2
+  },
+  {
+    "order": 86,
+    "variant": "shared",
+    "scenario": "repeated",
+    "repetition": 2
+  },
+  {
+    "order": 87,
+    "variant": "shared",
+    "scenario": "repeated",
+    "repetition": 7
+  },
+  {
+    "order": 88,
+    "variant": "local",
+    "scenario": "repeated",
+    "repetition": 8
+  },
+  {
+    "order": 89,
+    "variant": "server",
+    "scenario": "concurrent",
+    "repetition": 4
+  },
+  {
+    "order": 90,
+    "variant": "local",
+    "scenario": "repeated",
+    "repetition": 10
+  }
+]

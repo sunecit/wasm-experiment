@@ -16,7 +16,7 @@ export abstract class Microfrontend extends HTMLElement {
   abstract readonly componentName: string;
   configure(variant: Variant, context: Context): void {
     this.context = context;
-    // Независимые среды принадлежат микрофронтендам; общая — отдельному модулю.
+
     this.runtime = variant === 'shared' ? getSharedRuntime() : createImageRuntime(
       variant === 'local' ? `/mfes/${this.componentName}/manifest.json` : '/delivery/manifest.json'
     );

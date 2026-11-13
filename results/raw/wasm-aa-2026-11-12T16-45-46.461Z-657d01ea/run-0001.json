@@ -1,0 +1,92 @@
+{
+  "batchId": "wasm-aa-2026-11-12T16-45-46.461Z-657d01ea",
+  "runId": "0001",
+  "purpose": "validation",
+  "manifest": {
+    "file": "environment.json",
+    "sha256": "1ddac9906bcd7cdca27a32d8293b6f6ffc87a15ab40eb0af1fc10757270c24d5",
+    "git": {
+      "commit": "a1c091272d4cc956752a563d7fd602e20e603ec0",
+      "dirty": true
+    }
+  },
+  "params": {
+    "order": 1,
+    "variant": "shared",
+    "scenario": "sequential",
+    "repetition": 5
+  },
+  "seed": 20261112,
+  "startedAt": "2026-11-12T16:45:46.477Z",
+  "status": "completed",
+  "environment": {
+    "node": "v24.15.0",
+    "platform": "linux",
+    "architecture": "arm64",
+    "browser": "140.0.7339.16"
+  },
+  "pageErrors": [],
+  "resources": {
+    "scenario": {
+      "wallMs": 17.014332999999993,
+      "controllerCpuUs": 3478,
+      "controllerCpuPercentOneCore": 20.44158886510568,
+      "controllerRssBytesAfter": 108797952,
+      "cgroupAvailable": true,
+      "containerCpuUs": 48896,
+      "cpuQuotaCpus": 4,
+      "containerCpuPercentQuota": 71.84530830565032,
+      "throttledUs": 0,
+      "throttledPeriods": 0,
+      "containerMemoryBytesAfter": 161247232
+    },
+    "browserRun": {
+      "wallMs": 118.91416699999999,
+      "controllerCpuUs": 76686,
+      "controllerCpuPercentOneCore": 64.48853146320236,
+      "controllerRssBytesAfter": 108797952,
+      "cgroupAvailable": true,
+      "containerCpuUs": 326190,
+      "cpuQuotaCpus": 4,
+      "containerCpuPercentQuota": 68.57677437205612,
+      "throttledUs": 0,
+      "throttledPeriods": 0,
+      "containerMemoryBytesAfter": 161509376
+    }
+  },
+  "output": {
+    "variant": "shared",
+    "scenario": "sequential",
+    "scenarioDurationMs": 8.399999998509884,
+    "diagnostics": {
+      "initializationAttemptCount": 1,
+      "successfulInitializationCount": 1,
+      "wasmFetchCount": 1,
+      "wasmFetchedBytes": 1410,
+      "wasmInstanceCount": 1,
+      "wasmLinearMemoryBytes": 1376256,
+      "initializationDurationMs": 4.199999999254942,
+      "operationCount": 3,
+      "operationDurationMs": 2.100000001490116
+    },
+    "result": {
+      "redSum": 8792083,
+      "greenSum": 8792083,
+      "blueSum": 8792083,
+      "min": 23,
+      "max": 238,
+      "checksum": 3854371444,
+      "pixels": 67200
+    },
+    "analysisStage": null,
+    "resources": [
+      {
+        "name": "http://127.0.0.1:8080/shared/image-core.wasm",
+        "duration": 0.3999999985098839,
+        "transferSize": 1710,
+        "encodedBodySize": 1410
+      }
+    ]
+  },
+  "finishedAt": "2026-11-12T16:45:46.596Z"
+}

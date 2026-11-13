@@ -1,0 +1,104 @@
+{
+  "batchId": "wasm-integration-2026-11-12T17-19-32.348Z-c4be3aff",
+  "runId": "0071",
+  "purpose": "experiment",
+  "manifest": {
+    "file": "environment.json",
+    "sha256": "94987a0ed09aceb3a729567dd86a2a541caffee21462356cbf30a8022522b65a",
+    "git": {
+      "commit": "6ba62a676729a6ef220d508137f517b9eeec123b",
+      "dirty": false
+    }
+  },
+  "params": {
+    "order": 71,
+    "variant": "local",
+    "scenario": "repeated",
+    "repetition": 5
+  },
+  "seed": 20261112,
+  "startedAt": "2026-11-12T17:19:58.277Z",
+  "status": "completed",
+  "environment": {
+    "node": "v24.15.0",
+    "platform": "linux",
+    "architecture": "arm64",
+    "browser": "140.0.7339.16"
+  },
+  "pageErrors": [],
+  "resources": {
+    "scenario": {
+      "wallMs": 28.742374999997992,
+      "controllerCpuUs": 2736,
+      "controllerCpuPercentOneCore": 9.519046355773284,
+      "controllerRssBytesAfter": 136110080,
+      "cgroupAvailable": true,
+      "containerCpuUs": 80039,
+      "cpuQuotaCpus": 6,
+      "containerCpuPercentQuota": 46.41172948767896,
+      "throttledUs": 0,
+      "throttledPeriods": 0,
+      "containerMemoryBytesAfter": 217821184
+    },
+    "browserRun": {
+      "wallMs": 118.16762499999822,
+      "controllerCpuUs": 17016,
+      "controllerCpuPercentOneCore": 14.399883216744227,
+      "controllerRssBytesAfter": 136110080,
+      "cgroupAvailable": true,
+      "containerCpuUs": 320547,
+      "cpuQuotaCpus": 6,
+      "containerCpuPercentQuota": 45.21077579413211,
+      "throttledUs": 0,
+      "throttledPeriods": 0,
+      "containerMemoryBytesAfter": 217821184
+    }
+  },
+  "output": {
+    "variant": "local",
+    "scenario": "repeated",
+    "scenarioDurationMs": 20.599999997764826,
+    "diagnostics": {
+      "initializationAttemptCount": 3,
+      "successfulInitializationCount": 3,
+      "wasmFetchCount": 3,
+      "wasmFetchedBytes": 4230,
+      "wasmInstanceCount": 3,
+      "wasmLinearMemoryBytes": 3342336,
+      "initializationDurationMs": 7.7000000067055225,
+      "operationCount": 5,
+      "operationDurationMs": 8.099999994039536
+    },
+    "result": {
+      "redSum": 34405560,
+      "greenSum": 34405760,
+      "blueSum": 30912000,
+      "min": 0,
+      "max": 255,
+      "checksum": 1933517477,
+      "pixels": 268800
+    },
+    "analysisStage": "После инверсии и горизонтального отражения, до последних двух операций.",
+    "resources": [
+      {
+        "name": "http://127.0.0.1:8080/mfes/filters/image-core.wasm",
+        "duration": 0.8000000007450581,
+        "transferSize": 1710,
+        "encodedBodySize": 1410
+      },
+      {
+        "name": "http://127.0.0.1:8080/mfes/transform/image-core.wasm",
+        "duration": 0.5,
+        "transferSize": 1710,
+        "encodedBodySize": 1410
+      },
+      {
+        "name": "http://127.0.0.1:8080/mfes/analysis/image-core.wasm",
+        "duration": 0.6999999992549419,
+        "transferSize": 1710,
+        "encodedBodySize": 1410
+      }
+    ]
+  },
+  "finishedAt": "2026-11-12T17:19:58.395Z"
+}

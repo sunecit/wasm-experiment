@@ -3,7 +3,7 @@ import type { RgbaImage } from '../runtime/image-runtime';
 export function createSample(): RgbaImage {
   const width = 640, height = 420;
   const data = new Uint8ClampedArray(width * height * 4);
-  // Координатный узор воспроизводится побайтно и не зависит от внешнего файла.
+
   for (let y = 0; y < height; y++) for (let x = 0; x < width; x++) {
     const i = (y * width + x) * 4;
     data[i] = Math.floor(x * 255 / (width - 1));

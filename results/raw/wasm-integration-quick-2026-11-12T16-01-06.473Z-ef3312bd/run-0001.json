@@ -1,0 +1,77 @@
+{
+  "batchId": "wasm-integration-quick-2026-11-12T16-01-06.473Z-ef3312bd",
+  "runId": "0001",
+  "purpose": "validation",
+  "manifest": {
+    "file": "environment.json",
+    "sha256": "9206329bd8d75497c84d2d15e4e9974c22efbbd5511c37269cc59b1c75543e5b",
+    "git": {
+      "commit": null,
+      "dirty": null,
+      "reason": "Нет доступного Git-коммита."
+    }
+  },
+  "params": {
+    "order": 1,
+    "variant": "server",
+    "scenario": "sequential",
+    "repetition": 1
+  },
+  "seed": 20261112,
+  "startedAt": "2026-11-12T16:01:06.490Z",
+  "status": "completed",
+  "environment": {
+    "node": "v24.15.0",
+    "platform": "linux",
+    "architecture": "arm64",
+    "browser": "140.0.7339.16"
+  },
+  "pageErrors": [],
+  "output": {
+    "variant": "server",
+    "scenario": "sequential",
+    "scenarioDurationMs": 24.699999999254942,
+    "diagnostics": {
+      "initializationAttemptCount": 3,
+      "successfulInitializationCount": 3,
+      "wasmFetchCount": 3,
+      "wasmFetchedBytes": 4230,
+      "wasmInstanceCount": 3,
+      "wasmLinearMemoryBytes": 2818048,
+      "initializationDurationMs": 16.300000000745058,
+      "operationCount": 3,
+      "operationDurationMs": 4.600000001490116
+    },
+    "result": {
+      "redSum": 8792083,
+      "greenSum": 8792083,
+      "blueSum": 8792083,
+      "min": 23,
+      "max": 238,
+      "checksum": 3854371444,
+      "pixels": 67200
+    },
+    "analysisStage": null,
+    "resources": [
+      {
+        "name": "http://127.0.0.1:8080/delivery/image-core.wasm",
+        "duration": 0.8000000007450581,
+        "transferSize": 1710,
+        "encodedBodySize": 1410
+      },
+      {
+        "name": "http://127.0.0.1:8080/delivery/image-core.wasm",
+        "duration": 0.6000000014901161,
+        "transferSize": 0,
+        "encodedBodySize": 1410
+      },
+      {
+        "name": "http://127.0.0.1:8080/delivery/image-core.wasm",
+        "duration": 0.6000000014901161,
+        "transferSize": 0,
+        "encodedBodySize": 1410
+      }
+    ]
+  },
+  "finishedAt": "2026-11-12T16:01:06.688Z"
+}

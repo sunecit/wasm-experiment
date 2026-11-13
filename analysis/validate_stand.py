@@ -10,7 +10,6 @@ from scipy import stats
 import matplotlib.pyplot as plt
 from analyze import load_batch, holm, cliffs_delta, median_interval, TIMINGS
 
-
 def aa_test(values, labels):
     x = np.asarray(values, dtype=float)
     a, b = x[labels == 'A1'], x[labels == 'A2']
@@ -25,7 +24,6 @@ def aa_test(values, labels):
                 median_difference=float(np.median(a) - np.median(b)),
                 cliffs_delta=cliffs_delta(a, b), p_raw=extreme / total)
 
-
 def trend_test(order, values, seed, permutations):
     x, y = stats.rankdata(order), stats.rankdata(values)
     if np.ptp(y) == 0:
@@ -37,11 +35,9 @@ def trend_test(order, values, seed, permutations):
     extreme = sum(abs(np.dot(x, rng.permutation(y)) / norm) >= abs(rho) - 1e-12 for _ in range(permutations))
     return dict(rho=rho, p_raw=(extreme + 1) / (permutations + 1), constant=False)
 
-
 def adjust(rows):
     for row, value in zip(rows, holm([row['p_raw'] for row in rows])):
         row['p_holm'] = float(value)
-
 
 def load_resources(path, expected_count):
     rows = []
@@ -60,7 +56,6 @@ def load_resources(path, expected_count):
         raise ValueError('Число записей ресурсов не соответствует серии.')
     return pd.DataFrame(rows)
 
-
 def resource_summary(frame, threshold):
     result = []
     for phase, group in frame.groupby('phase'):
@@ -76,7 +71,6 @@ def resource_summary(frame, threshold):
             runsWithThrottling=int((throttle > 0).sum()) if complete else None,
             status='incomplete' if not complete else 'attention' if warning else 'no_saturation_observed'))
     return result
-
 
 def main():
     parser = argparse.ArgumentParser(description='A/A, нагрузка и стабильность экспериментального стенда.')
@@ -180,7 +174,6 @@ def main():
     text.extend(report['limitations'])
     (output / 'validation.txt').write_text('\n'.join(text) + '\n')
     print('\n'.join(text[:4])); print(f'Протокол: {output}')
-
 
 if __name__ == '__main__':
     main()

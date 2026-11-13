@@ -1,0 +1,25 @@
+{
+  "name": "wasm-integration",
+  "purpose": "experiment",
+  "seed": 20261112,
+  "variants": [
+    "local",
+    "server",
+    "shared"
+  ],
+  "scenarios": [
+    "sequential",
+    "concurrent",
+    "repeated"
+  ],
+  "repetitions": 10,
+  "randomizeOrder": true,
+  "pauseMs": 250,
+  "navigationTimeoutMs": 30000,
+  "scenarioTimeoutMs": 30000,
+  "viewport": {
+    "width": 1280,
+    "height": 900
+  },
+  "isolation": "browser-per-run"
+}

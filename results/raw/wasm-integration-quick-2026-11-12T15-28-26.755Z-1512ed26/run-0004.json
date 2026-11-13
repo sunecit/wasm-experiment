@@ -1,0 +1,56 @@
+{
+  "batchId": "wasm-integration-quick-2026-11-12T15-28-26.755Z-1512ed26",
+  "runId": "0004",
+  "purpose": "validation",
+  "params": {
+    "order": 4,
+    "variant": "shared",
+    "scenario": "sequential",
+    "repetition": 1
+  },
+  "seed": 20261112,
+  "startedAt": "2026-11-12T15:28:27.220Z",
+  "status": "completed",
+  "environment": {
+    "node": "v24.15.0",
+    "platform": "linux",
+    "architecture": "arm64",
+    "browser": "140.0.7339.16"
+  },
+  "pageErrors": [],
+  "output": {
+    "variant": "shared",
+    "scenario": "sequential",
+    "scenarioDurationMs": 6.900000002235174,
+    "diagnostics": {
+      "initializationAttemptCount": 1,
+      "successfulInitializationCount": 1,
+      "wasmFetchCount": 1,
+      "wasmFetchedBytes": 1410,
+      "wasmInstanceCount": 1,
+      "wasmLinearMemoryBytes": 1376256,
+      "initializationDurationMs": 2.599999997764826,
+      "operationCount": 3,
+      "operationDurationMs": 2.0000000037252903
+    },
+    "result": {
+      "redSum": 8792083,
+      "greenSum": 8792083,
+      "blueSum": 8792083,
+      "min": 23,
+      "max": 238,
+      "checksum": 3854371444,
+      "pixels": 67200
+    },
+    "analysisStage": null,
+    "resources": [
+      {
+        "name": "http://127.0.0.1:8080/shared/image-core.wasm",
+        "duration": 0.5,
+        "transferSize": 1710,
+        "encodedBodySize": 1410
+      }
+    ]
+  },
+  "finishedAt": "2026-11-12T15:28:27.314Z"
+}

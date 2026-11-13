@@ -1,0 +1,17 @@
+{
+  "batchId": "wasm-aa-2026-11-12T16-43-49.654Z-c6428ca8",
+  "purpose": "validation",
+  "startedAt": "2026-11-12T16:43:49.655Z",
+  "status": "completed",
+  "planned": 10,
+  "completed": 10,
+  "failed": 0,
+  "configPath": "configs/aa.json",
+  "seed": 20261112,
+  "metadataStatus": "unversioned-code",
+  "limitations": [
+    "Версия кода не зафиксирована чистым Git-коммитом.",
+    "Оценка A/A, нагрузки и стабильности выполняется отдельной командой make validate."
+  ],
+  "finishedAt": "2026-11-12T16:43:53.361Z"
+}

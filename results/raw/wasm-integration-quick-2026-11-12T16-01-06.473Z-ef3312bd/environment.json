@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-11-12T16:01:06.181Z",
+  "git": {
+    "commit": null,
+    "dirty": null,
+    "reason": "Нет доступного Git-коммита."
+  },
+  "configSha256": "16abb764742b63d1924bf050e4db7ed9a9b91eabb43172ba0125c9e30a5d4bd4",
+  "host": {
+    "os": "Darwin",
+    "release": "25.2.0",
+    "architecture": "arm64",
+    "cpuModel": "Apple M5",
+    "logicalCpuCount": 10,
+    "memoryBytes": 25769803776
+  },
+  "docker": {
+    "serverVersion": "29.4.3",
+    "operatingSystem": "Docker Desktop",
+    "architecture": "aarch64",
+    "cpuCount": 10,
+    "memoryBytes": 8321712128,
+    "composeVersion": "5.1.3"
+  },
+  "services": {
+    "web": {
+      "imageId": "sha256:87d62b3abe84cd92dd8b0af143fec95ae5a1cd9b7bc13cd74c82b37bf740fc3f",
+      "repoDigests": [
+        "pr4-wasm-experiment-web@sha256:87d62b3abe84cd92dd8b0af143fec95ae5a1cd9b7bc13cd74c82b37bf740fc3f"
+      ],
+      "os": "linux",
+      "architecture": "arm64",
+      "configuredLimits": {
+        "cpus": 1,
+        "memory": "134217728"
+      },
+      "actualLimits": {
+        "nanoCpus": 1000000000,
+        "memoryBytes": 134217728,
+        "shmBytes": 67108864
+      }
+    },
+    "wasm-delivery": {
+      "imageId": "sha256:c5c334f280b1b9ef1e7776b951e0bee33b1bb3c88f58e66197a2e8e355ca5e06",
+      "repoDigests": [
+        "pr4-wasm-experiment-wasm-delivery@sha256:c5c334f280b1b9ef1e7776b951e0bee33b1bb3c88f58e66197a2e8e355ca5e06"
+      ],
+      "os": "linux",
+      "architecture": "arm64",
+      "configuredLimits": {
+        "cpus": 0.5,
+        "memory": "67108864"
+      },
+      "actualLimits": {
+        "nanoCpus": 500000000,
+        "memoryBytes": 67108864,
+        "shmBytes": 67108864
+      }
+    },
+    "experiment": {
+      "imageId": "sha256:1c4fc9c6f16d5b7af0f8f265c08b31be1a18d6a8d168b9d48232bff58a517dfd",
+      "repoDigests": [
+        "pr4-wasm-experiment-experiment@sha256:1c4fc9c6f16d5b7af0f8f265c08b31be1a18d6a8d168b9d48232bff58a517dfd"
+      ],
+      "os": "linux",
+      "architecture": "arm64",
+      "configuredLimits": {
+        "cpus": 2,
+        "memory": "2147483648",
+        "shmSize": "536870912"
+      },
+      "actualLimits": null
+    }
+  },
+  "limitations": [
+    "Версия кода не зафиксирована чистым Git-коммитом."
+  ]
+}

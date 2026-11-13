@@ -67,12 +67,12 @@ const metadata = {
     }, services,
     limitations: git.commit && !git.dirty ? [] : ['Версия кода не зафиксирована чистым Git-коммитом.']
 };
-// Уникальный файл исключает перезапись метаданных другой серии.
+
 mkdirSync('results/raw', {recursive: true});
 const filename = `environment-${randomUUID()}.json`;
 writeFileSync(`results/raw/${filename}`, JSON.stringify(metadata, null, 2) + '\n', {flag: 'wx'});
 try {
-    // После фиксации идентификаторов повторной сборки образов здесь нет.
+
     execFileSync('docker', ['compose', '--profile', 'experiment', 'run', '--rm', '--no-deps',
         '-e', `EXPERIMENT_CONFIG=${configPath}`, '-e', `EXPERIMENT_METADATA=results/raw/${filename}`,
         'experiment'], {stdio: 'inherit'});

@@ -41,7 +41,7 @@ export async function readConfig(path) {
 function randomGenerator(seed) {
     let state = seed >>> 0;
     return () => {
-        // Детерминированный генератор Mulberry32 задаёт только порядок запусков.
+
         state = (state + 0x6D2B79F5) >>> 0;
         let value = Math.imul(state ^ state >>> 15, 1 | state);
         value ^= value + Math.imul(value ^ value >>> 7, 61 | value);

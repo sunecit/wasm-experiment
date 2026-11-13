@@ -1,0 +1,4 @@
+variant,scenario,metric,n,rho,p_raw,constant,p_holm
+shared,sequential,scenarioDurationMs,10,0.296969696969697,0.4071,False,0.5433
+shared,sequential,initializationDurationMs,10,0.4666666666666667,0.1811,False,0.5433
+shared,sequential,operationDurationMs,10,-0.39025115732422666,0.2587,False,0.5433

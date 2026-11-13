@@ -1,0 +1,62 @@
+[
+  {
+    "order": 1,
+    "variant": "shared",
+    "scenario": "sequential",
+    "repetition": 5
+  },
+  {
+    "order": 2,
+    "variant": "shared",
+    "scenario": "sequential",
+    "repetition": 7
+  },
+  {
+    "order": 3,
+    "variant": "shared",
+    "scenario": "sequential",
+    "repetition": 3
+  },
+  {
+    "order": 4,
+    "variant": "shared",
+    "scenario": "sequential",
+    "repetition": 9
+  },
+  {
+    "order": 5,
+    "variant": "shared",
+    "scenario": "sequential",
+    "repetition": 1
+  },
+  {
+    "order": 6,
+    "variant": "shared",
+    "scenario": "sequential",
+    "repetition": 2
+  },
+  {
+    "order": 7,
+    "variant": "shared",
+    "scenario": "sequential",
+    "repetition": 8
+  },
+  {
+    "order": 8,
+    "variant": "shared",
+    "scenario": "sequential",
+    "repetition": 6
+  },
+  {
+    "order": 9,
+    "variant": "shared",
+    "scenario": "sequential",
+    "repetition": 4
+  },
+  {
+    "order": 10,
+    "variant": "shared",
+    "scenario": "sequential",
+    "repetition": 10
+  }
+]

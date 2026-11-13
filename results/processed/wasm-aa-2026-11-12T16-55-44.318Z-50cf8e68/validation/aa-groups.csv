@@ -1,0 +1,11 @@
+runId,order,variant,scenario,repetition,group
+0001,1,shared,sequential,5,A2
+0002,2,shared,sequential,7,A1
+0003,3,shared,sequential,3,A1
+0004,4,shared,sequential,9,A2
+0005,5,shared,sequential,1,A1
+0006,6,shared,sequential,2,A2
+0007,7,shared,sequential,8,A1
+0008,8,shared,sequential,6,A1
+0009,9,shared,sequential,4,A2
+0010,10,shared,sequential,10,A2

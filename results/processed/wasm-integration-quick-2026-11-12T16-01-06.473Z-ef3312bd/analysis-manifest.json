@@ -1,0 +1,38 @@
+{
+  "batchId": "wasm-integration-quick-2026-11-12T16-01-06.473Z-ef3312bd",
+  "purpose": "validation",
+  "inputSha256": {
+    "run-0001.json": "99e4c216a936b867193629d576ad09f40379f52ce3acd59ffee944c8b16daa58",
+    "run-0002.json": "df83bf1256efa8e1f67ddd2306ca4d567b9765ee319132a33867723741eb4f5b",
+    "run-0003.json": "35b0bb8f005e27a31c1450d565fea0304e31741048660ff2251c42771121fb29",
+    "run-0004.json": "9f3ef714f10735c494416e56263732b85ce5484684a414ba79a960fd51b1b96b",
+    "run-0005.json": "ac3a47521d1a0fb8641d33c313e28aba518e66eccea37860aa6bbccfa82e16a0",
+    "run-0006.json": "ad3f3508379f96daedb5ff43181c8de4d656064f30ef1ebf5c815f7c1ef83170",
+    "run-0007.json": "b74fdb21d7ef658b390e5794db6c6100a0e3a08715126ca4c11aa81e34f577ef",
+    "run-0008.json": "1152dd27cb71edda24f6325d9558c6d968e4c44a1b644f1da1f217ec316bf76b",
+    "run-0009.json": "d877352e8261a1ee98d8f1b582c825ddb3bc757734cc15fe2441744b24b45b77",
+    "config.json": "39fcbc2a99e565291f7871c8653d8fb9d20912d92309fe125e857ce273d2bfc6",
+    "plan.json": "12be188c2cab76c5c72ca7b17a689e364fc817d10d2deba68c955e4d0b9070d5",
+    "summary.json": "5328518e4ce5c22326116d493595a5af01b9dace5150c0e47ac7b56b795ecf06",
+    "environment.json": "9206329bd8d75497c84d2d15e4e9974c22efbbd5511c37269cc59b1c75543e5b"
+  },
+  "analysisSourceSha256": "e1e6d36d86fabdcb1131ca80fcfbf11c3cfcfbeeac1f97fce694e03d3afd7b90",
+  "seed": 20261112,
+  "bootstrapResamples": 10000,
+  "bootstrapMethod": "percentile",
+  "confidenceLevel": 0.95,
+  "multipleTestingFamily": "Все рассчитанные сравнения временных метрик этой серии",
+  "versions": {
+    "python": "3.12.10",
+    "numpy": "2.2.6",
+    "scipy": "1.15.3",
+    "pandas": "2.2.3",
+    "matplotlib": "3.10.3"
+  },
+  "limitations": [
+    "Проверки A/A, нагрузки и повторяемости выполняются отдельно.",
+    "Линейная память WASM не равна общей памяти браузера.",
+    "Сумма полученных WASM-байт не равна сетевому трафику из-за кэширования.",
+    "Отсутствие значимого различия не доказывает эквивалентность."
+  ]
+}

@@ -24,10 +24,8 @@ METRICS = {
 }
 TIMINGS = list(METRICS)[:3]
 
-
 def read_json(path):
     return json.loads(path.read_text())
-
 
 def load_batch(path):
     summary = read_json(path / 'summary.json')
@@ -80,20 +78,17 @@ def load_batch(path):
         hashes[name] = hashlib.sha256((path / name).read_bytes()).hexdigest()
     return frame, config, summary, hashes
 
-
 def median_interval(values, seed, resamples):
     x = np.asarray(values, dtype=float)
     if len(x) < 2:
         return None, None
-    # Перцентильный bootstrap: единицей повторной выборки является целый прогон.
+
     rng = np.random.default_rng(seed)
     medians = np.median(rng.choice(x, size=(resamples, len(x)), replace=True), axis=1)
     return tuple(float(v) for v in np.quantile(medians, [0.025, 0.975]))
 
-
 def cliffs_delta(a, b):
     return float(np.sign(np.subtract.outer(np.asarray(a, dtype=float), np.asarray(b, dtype=float))).mean())
-
 
 def holm(pvalues):
     pvalues = np.asarray(pvalues, dtype=float)
@@ -104,7 +99,6 @@ def holm(pvalues):
         previous = max(previous, min(1.0, (len(pvalues) - rank) * pvalues[index]))
         result[index] = previous
     return result
-
 
 def analyze(frame, config, output, seed, resamples):
     summaries = []
@@ -117,7 +111,7 @@ def analyze(frame, config, output, seed, resamples):
                 ci95_low=lo, ci95_high=hi))
     pd.DataFrame(summaries).to_csv(output / 'summary.csv', index=False)
     comparisons = []
-    # Проверочные серии не используются для проверки гипотез.
+
     for scenario in config['scenarios']:
         for a, b in itertools.combinations(config['variants'], 2):
             for metric in TIMINGS:
@@ -154,7 +148,6 @@ def analyze(frame, config, output, seed, resamples):
             fig.savefig(output / f'{scenario}-{metric}.png', dpi=140)
             plt.close(fig)
 
-
 def main():
     parser = argparse.ArgumentParser(description='Анализ одной явно выбранной серии прогонов.')
     parser.add_argument('--batch', required=True)
@@ -185,7 +178,6 @@ def main():
     print(f'Обработано {len(frame)} прогонов. Назначение: {config["purpose"]}. Результаты: {output}')
     if config['purpose'] == 'validation':
         print('Проверочная серия: сравнение подходов отключено. A/A выполняется отдельной командой make validate.')
-
 
 if __name__ == '__main__':
     main()

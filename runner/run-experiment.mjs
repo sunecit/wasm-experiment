@@ -28,7 +28,7 @@ await mkdir(directory, {recursive: false});
 
 async function save(name, data) {
     const target = resolve(directory, name);
-    // Атомарная замена не оставляет наполовину записанный JSON.
+
     await writeFile(`${target}.tmp`, JSON.stringify(data, null, 2) + '\n');
     await rename(`${target}.tmp`, target);
 }
@@ -57,7 +57,7 @@ await save('plan.json', plan);
 await save('summary.json', summary);
 let sequentialChecksum;
 try {
-    // Проверяем именно контейнерные сервисы, а не случайно работающий сервер разработки.
+
     for (const [path, service] of [['/health', 'web'], ['/delivery/health', 'wasm-delivery']]) {
         const response = await fetch(new URL(path, baseURL), {signal: AbortSignal.timeout(config.navigationTimeoutMs)});
         assert.equal(response.status, 200);
@@ -78,7 +78,7 @@ try {
         };
         const browserResourceStart = snapshot();
         try {
-            // Новый процесс браузера и контекст исключают повторное использование runtime и HTTP-кэша браузера.
+
             browser = await chromium.launch({headless: true, timeout: config.navigationTimeoutMs});
             record.environment.browser = browser.version();
             context = await browser.newContext({viewport: config.viewport, serviceWorkers: 'block'});
@@ -97,7 +97,7 @@ try {
             } finally {
                 record.resources.scenario = difference(scenarioResourceStart, snapshot());
             }
-            // Сначала сохраняем исходный ответ, затем проверяем корректность: ошибочный ответ не теряется.
+
             record.output = output;
             assert.equal(output.variant, params.variant);
             assert.equal(output.scenario, params.scenario);
@@ -127,7 +127,7 @@ try {
         } finally {
             record.resources.browserRun = difference(browserResourceStart, snapshot());
             record.finishedAt = new Date().toISOString();
-            // Запись выполняется до закрытия браузера, чтобы ошибка очистки не скрыла исходные данные.
+
             try {
                 await save(`run-${record.runId}.json`, record);
             } finally {

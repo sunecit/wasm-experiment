@@ -1,0 +1,65 @@
+{
+  "batchId": "wasm-integration-quick-2026-11-12T15-28-26.755Z-1512ed26",
+  "runId": "0006",
+  "purpose": "validation",
+  "params": {
+    "order": 6,
+    "variant": "server",
+    "scenario": "concurrent",
+    "repetition": 1
+  },
+  "seed": 20261112,
+  "startedAt": "2026-11-12T15:28:27.429Z",
+  "status": "completed",
+  "environment": {
+    "node": "v24.15.0",
+    "platform": "linux",
+    "architecture": "arm64",
+    "browser": "140.0.7339.16"
+  },
+  "pageErrors": [],
+  "output": {
+    "variant": "server",
+    "scenario": "concurrent",
+    "scenarioDurationMs": 6.899999998509884,
+    "diagnostics": {
+      "initializationAttemptCount": 2,
+      "successfulInitializationCount": 2,
+      "wasmFetchCount": 2,
+      "wasmFetchedBytes": 2820,
+      "wasmInstanceCount": 2,
+      "wasmLinearMemoryBytes": 2490368,
+      "initializationDurationMs": 7.900000002235174,
+      "operationCount": 2,
+      "operationDurationMs": 1.5999999977648258
+    },
+    "result": {
+      "branches": [
+        {
+          "width": 640,
+          "height": 420
+        },
+        {
+          "width": 320,
+          "height": 210
+        }
+      ]
+    },
+    "analysisStage": null,
+    "resources": [
+      {
+        "name": "http://127.0.0.1:8080/delivery/image-core.wasm",
+        "duration": 0.6000000014901161,
+        "transferSize": 1710,
+        "encodedBodySize": 1410
+      },
+      {
+        "name": "http://127.0.0.1:8080/delivery/image-core.wasm",
+        "duration": 0.6999999992549419,
+        "transferSize": 0,
+        "encodedBodySize": 1410
+      }
+    ]
+  },
+  "finishedAt": "2026-11-12T15:28:27.527Z"
+}

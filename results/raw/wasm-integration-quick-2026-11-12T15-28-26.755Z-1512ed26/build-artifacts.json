@@ -1,0 +1,62 @@
+{
+  "artifacts": [
+    {
+      "path": "mfes/filters/image-core.wasm",
+      "bytes": 1410,
+      "sha256": "5d0ae26b7d0b40590a349a13a19b4e3167a47aaacf1024dc0f318b7252c36794"
+    },
+    {
+      "path": "mfes/transform/image-core.wasm",
+      "bytes": 1410,
+      "sha256": "5d0ae26b7d0b40590a349a13a19b4e3167a47aaacf1024dc0f318b7252c36794"
+    },
+    {
+      "path": "mfes/analysis/image-core.wasm",
+      "bytes": 1410,
+      "sha256": "5d0ae26b7d0b40590a349a13a19b4e3167a47aaacf1024dc0f318b7252c36794"
+    },
+    {
+      "path": "delivery/image-core.wasm",
+      "bytes": 1410,
+      "sha256": "5d0ae26b7d0b40590a349a13a19b4e3167a47aaacf1024dc0f318b7252c36794"
+    },
+    {
+      "path": "shared/image-core.wasm",
+      "bytes": 1410,
+      "sha256": "5d0ae26b7d0b40590a349a13a19b4e3167a47aaacf1024dc0f318b7252c36794"
+    }
+  ],
+  "byVariant": {
+    "local": [
+      {
+        "path": "mfes/filters/image-core.wasm",
+        "bytes": 1410,
+        "sha256": "5d0ae26b7d0b40590a349a13a19b4e3167a47aaacf1024dc0f318b7252c36794"
+      },
+      {
+        "path": "mfes/transform/image-core.wasm",
+        "bytes": 1410,
+        "sha256": "5d0ae26b7d0b40590a349a13a19b4e3167a47aaacf1024dc0f318b7252c36794"
+      },
+      {
+        "path": "mfes/analysis/image-core.wasm",
+        "bytes": 1410,
+        "sha256": "5d0ae26b7d0b40590a349a13a19b4e3167a47aaacf1024dc0f318b7252c36794"
+      }
+    ],
+    "server": [
+      {
+        "path": "delivery/image-core.wasm",
+        "bytes": 1410,
+        "sha256": "5d0ae26b7d0b40590a349a13a19b4e3167a47aaacf1024dc0f318b7252c36794"
+      }
+    ],
+    "shared": [
+      {
+        "path": "shared/image-core.wasm",
+        "bytes": 1410,
+        "sha256": "5d0ae26b7d0b40590a349a13a19b4e3167a47aaacf1024dc0f318b7252c36794"
+      }
+    ]
+  }
+}

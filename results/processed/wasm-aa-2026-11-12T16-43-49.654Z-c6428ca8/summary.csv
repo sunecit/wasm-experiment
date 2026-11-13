@@ -1,0 +1,8 @@
+scenario,variant,metric,n,median,iqr,ci95_low,ci95_high
+sequential,shared,scenarioDurationMs,10,8.300000000745058,1.425000000745058,7.200000001117587,9.100000001490116
+sequential,shared,initializationDurationMs,10,4.150000000372529,2.075000001117587,2.300000000745058,4.800000000745058
+sequential,shared,operationDurationMs,10,1.9000000022351742,0.24999999720603228,1.699999999254942,2.049999998882413
+sequential,shared,wasmInstanceCount,10,1.0,0.0,1.0,1.0
+sequential,shared,wasmLinearMemoryBytes,10,1376256.0,0.0,1376256.0,1376256.0
+sequential,shared,wasmFetchCount,10,1.0,0.0,1.0,1.0
+sequential,shared,wasmFetchedBytes,10,1410.0,0.0,1410.0,1410.0

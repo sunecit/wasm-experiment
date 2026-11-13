@@ -1,4 +1,3 @@
-# Все цели выполняются из корня репозитория.
 .DEFAULT_GOAL := help
 CONFIG ?= configs/experiment.json
 .PHONY: help build up smoke check plan-test experiment quick down

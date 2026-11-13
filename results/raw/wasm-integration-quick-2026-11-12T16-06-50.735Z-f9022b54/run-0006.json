@@ -1,0 +1,74 @@
+{
+  "batchId": "wasm-integration-quick-2026-11-12T16-06-50.735Z-f9022b54",
+  "runId": "0006",
+  "purpose": "validation",
+  "manifest": {
+    "file": "environment.json",
+    "sha256": "c3da496cc9a35a197e1fd7a367866f20511d987a240d81a815a562667a97cca3",
+    "git": {
+      "commit": null,
+      "dirty": null,
+      "reason": "Нет доступного Git-коммита."
+    }
+  },
+  "params": {
+    "order": 6,
+    "variant": "server",
+    "scenario": "concurrent",
+    "repetition": 1
+  },
+  "seed": 20261112,
+  "startedAt": "2026-11-12T16:06:51.448Z",
+  "status": "completed",
+  "environment": {
+    "node": "v24.15.0",
+    "platform": "linux",
+    "architecture": "arm64",
+    "browser": "140.0.7339.16"
+  },
+  "pageErrors": [],
+  "output": {
+    "variant": "server",
+    "scenario": "concurrent",
+    "scenarioDurationMs": 6.600000001490116,
+    "diagnostics": {
+      "initializationAttemptCount": 2,
+      "successfulInitializationCount": 2,
+      "wasmFetchCount": 2,
+      "wasmFetchedBytes": 2820,
+      "wasmInstanceCount": 2,
+      "wasmLinearMemoryBytes": 2490368,
+      "initializationDurationMs": 7.600000001490116,
+      "operationCount": 2,
+      "operationDurationMs": 1.7000000029802322
+    },
+    "result": {
+      "branches": [
+        {
+          "width": 640,
+          "height": 420
+        },
+        {
+          "width": 320,
+          "height": 210
+        }
+      ]
+    },
+    "analysisStage": null,
+    "resources": [
+      {
+        "name": "http://127.0.0.1:8080/delivery/image-core.wasm",
+        "duration": 0.8999999985098839,
+        "transferSize": 1710,
+        "encodedBodySize": 1410
+      },
+      {
+        "name": "http://127.0.0.1:8080/delivery/image-core.wasm",
+        "duration": 0.30000000074505806,
+        "transferSize": 0,
+        "encodedBodySize": 1410
+      }
+    ]
+  },
+  "finishedAt": "2026-11-12T16:06:51.536Z"
+}

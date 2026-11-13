@@ -10,7 +10,7 @@ await build({ configFile: false, root: resolve(root, 'sut/host'), base: '/', bui
   target: 'es2022', outDir: resolve(root, 'dist'), emptyOutDir: true,
   rollupOptions: { external, output: { paths } }
 } });
-// Каждая сборка создаёт независимый модуль, доступный по собственному адресу.
+
 for (const name of ['filters', 'transform', 'analysis']) {
   await build({ configFile: false, build: {
     target: 'es2022', outDir: resolve(root, `dist/mfes/${name}`), emptyOutDir: true,

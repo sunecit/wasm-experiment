@@ -1,0 +1,24 @@
+{
+  "startedAt": "2026-11-12T16:55:34.027Z",
+  "baseURL": "http://127.0.0.1:8080",
+  "node": "v24.15.0",
+  "browser": "140.0.7339.16",
+  "checks": [
+    {
+      "variant": "local",
+      "instances": 3,
+      "checksum": 3854371444
+    },
+    {
+      "variant": "server",
+      "instances": 3,
+      "checksum": 3854371444
+    },
+    {
+      "variant": "shared",
+      "instances": 1,
+      "checksum": 3854371444
+    }
+  ],
+  "finishedAt": "2026-11-12T16:55:34.349Z"
+}

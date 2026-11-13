@@ -36,7 +36,7 @@
       i32.const -1
       i32.eq
       if
-        unreachable ;; Завершаем выполнение, если движок не может выделить запрошенную память.
+        unreachable
       end
     end
     local.get $end

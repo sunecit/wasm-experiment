@@ -1,0 +1,56 @@
+[
+  {
+    "order": 1,
+    "variant": "server",
+    "scenario": "sequential",
+    "repetition": 1
+  },
+  {
+    "order": 2,
+    "variant": "local",
+    "scenario": "concurrent",
+    "repetition": 1
+  },
+  {
+    "order": 3,
+    "variant": "shared",
+    "scenario": "concurrent",
+    "repetition": 1
+  },
+  {
+    "order": 4,
+    "variant": "shared",
+    "scenario": "sequential",
+    "repetition": 1
+  },
+  {
+    "order": 5,
+    "variant": "local",
+    "scenario": "sequential",
+    "repetition": 1
+  },
+  {
+    "order": 6,
+    "variant": "server",
+    "scenario": "concurrent",
+    "repetition": 1
+  },
+  {
+    "order": 7,
+    "variant": "server",
+    "scenario": "repeated",
+    "repetition": 1
+  },
+  {
+    "order": 8,
+    "variant": "local",
+    "scenario": "repeated",
+    "repetition": 1
+  },
+  {
+    "order": 9,
+    "variant": "shared",
+    "scenario": "repeated",
+    "repetition": 1
+  }
+]

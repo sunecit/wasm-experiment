@@ -34,12 +34,11 @@ const descriptions: Record<Variant, string> = {
   shared: 'Все микрофронтенды используют общую среду, которая создаёт один экземпляр WASM. Фильтрация, преобразование и анализ повторно используют его память.'
 };
 
-
 async function start(): Promise<void> {
-  // Микрофронтенды собираются отдельно и подключаются как браузерные ES-модули.
+
   await Promise.all(['filters', 'transform', 'analysis'].map(name => {
     const url = `/mfes/${name}/remoteEntry.js`;
-    return import(/* @vite-ignore */ url);
+    return import(                   url);
   }));
   const filters = element<FiltersElement>('filters-mfe');
   const transform = element<TransformElement>('transform-mfe');
@@ -47,7 +46,7 @@ async function start(): Promise<void> {
   const components = [filters, transform, analysis];
 
   function diagnostics(): Totals {
-    // Общий runtime учитывается один раз, даже если к нему обращаются три компонента.
+
     const runtimes = [...new Set(components.map(component => component.runtime))];
     const { lastOperationDurationMs: _last, ...totals } = runtimes[0].diagnostics();
     for (const key of Object.keys(totals) as (keyof Totals)[]) {
@@ -87,7 +86,7 @@ async function start(): Promise<void> {
     getImage: () => image,
     commit: value => { image = value; showResults({ title: 'Изображение обработано', explanation: `Текущий размер: ${image.width} × ${image.height} пикселей. Нажмите «Проанализировать» под изображением, чтобы получить его характеристики.` }); },
     showAnalysis: value => { showResults({ title: 'Анализ текущего изображения', explanation: `Проанализировано изображение ${image.width} × ${image.height} пикселей. Анализ не изменяет его содержимое.`, analysis: value }); },
-    perform: (action, operation) => { void perform(action, operation).catch(() => { /* Ошибка уже показана в статусе. */ }); }
+    perform: (action, operation) => { void perform(action, operation).catch(() => {                                      }); }
   };
   function reset(next: Variant): void {
     if (!['local', 'server', 'shared'].includes(next)) throw new Error('Неизвестный подход.');
@@ -112,9 +111,9 @@ async function start(): Promise<void> {
         image = await transform.resize(image, 320, 210);
         result = await analysis.analyze(image);
       } else if (scenario === 'concurrent') {
-        // Обе ветки получают исходное изображение. Итоговые изображения не смешиваются.
+
         const outputs = await Promise.all([filters.apply(image, 'grayscale'), transform.resize(image, 320, 210)]);
-        // Исходное изображение остаётся на месте; обе ветки показываются в результатах.
+
         branchImages = outputs;
         result = { branches: outputs.map(value => ({ width: value.width, height: value.height })) };
       } else {
@@ -152,7 +151,7 @@ async function start(): Promise<void> {
   selector.onchange = () => { reset(selector.value as Variant); status.textContent = `Выбран подход «${selector.selectedOptions[0].textContent}». Восстановлено исходное изображение, счётчики обнулены. WASM загрузится при первой операции.`; };
   element<HTMLButtonElement>('#reset').onclick = () => { reset(variant); status.textContent = 'Восстановлено исходное изображение 640 × 420. Счётчики обнулены. WASM загрузится при следующей операции; HTTP-кэш браузера не очищен.'; };
   document.querySelectorAll<HTMLButtonElement>('[data-scenario]').forEach(button => {
-    button.onclick = () => { void runScenario(button.dataset.scenario as Scenario).catch(() => { /* Ошибка уже показана в статусе. */ }); };
+    button.onclick = () => { void runScenario(button.dataset.scenario as Scenario).catch(() => {                                      }); };
   });
   reset('local'); status.textContent = 'Выберите фильтр или преобразование под изображением либо запустите сценарий справа. Вычисления ещё не выполнялись.';
   Object.assign(globalThis, { __imageLabHarness: { runScenario, diagnostics } });

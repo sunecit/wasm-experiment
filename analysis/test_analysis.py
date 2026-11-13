@@ -2,7 +2,6 @@ import unittest
 import numpy as np
 from analyze import cliffs_delta, holm, median_interval
 
-
 class StatisticsTests(unittest.TestCase):
     def test_effect_direction_and_ties(self):
         self.assertEqual(cliffs_delta([3, 4], [1, 2]), 1)
@@ -20,7 +19,6 @@ class StatisticsTests(unittest.TestCase):
 
     def test_reproducible_bootstrap(self):
         self.assertEqual(median_interval(range(10), 42, 1000), median_interval(range(10), 42, 1000))
-
 
 class InputTests(unittest.TestCase):
     def test_rejects_incomplete_series(self):

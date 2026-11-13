@@ -3,7 +3,6 @@ import numpy as np
 import pandas as pd
 from validate_stand import aa_test, trend_test, resource_summary
 
-
 class ValidationTests(unittest.TestCase):
     def test_aa_constant(self):
         labels = np.array(['A1'] * 5 + ['A2'] * 5)
